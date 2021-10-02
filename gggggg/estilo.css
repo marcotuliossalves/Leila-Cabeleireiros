@@ -1,0 +1,428 @@
+*,
+*::after,
+*::before{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --cor-verde:#6A8C51;
+    --cor-verde-escura:#587A3F;
+    --cor-marrom:#CA6E63;
+    --cor-marrom-escura:#AB5D54;
+    --cor-cinza:#C4C4C4;
+    --cor-cinza-escura:#A7A7A7;
+    --cor-azul:#3F434B;
+    --cor-azul-escura:#35383F;
+    --cor-fonte:#232323;
+    --fonte:'Roboto', arial, sans-serif;
+
+}
+
+html{
+    font-size:62.5%; /* 10px */     
+}
+
+body{
+    font-family:var(--fonte);
+    color:var(--cor-fonte);
+    font-size:1.6rem;      
+}
+
+img{
+    max-width:100%;
+}
+
+.container{
+    max-width:1140px;
+    width:95%;
+    margin:0 auto;
+}
+
+header{
+    background: radial-gradient(50% 50% at 50% 50%, #6A8C51 22.4%, #587A3F 100%);
+    height:515px;
+    position:relative;
+    z-index:0;  
+}
+
+.container-header{
+    min-height:515px;
+    display:grid;
+    grid-template-rows:100px 1fr;
+}
+
+.header-background{
+    border-top:515px solid #FFF;
+    border-right: 150px solid transparent;
+    width:45%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+
+header .logo-menu{
+    display:flex;
+    width:100%;
+    height:100px;
+    justify-content: space-between;
+    align-items:center;
+}
+
+header .logo-alt{
+    display:none;
+}
+
+header .menu-principal{
+    width:55%;    
+}
+
+header .menu-principal > ul{
+    display:flex;
+    justify-content: space-between;
+    list-style:none;
+    font-size: 1.8rem;
+    text-transform: uppercase;    
+}
+
+header .menu-principal a{
+    color:var(--cor-fonte);
+    text-decoration: none;
+    font-weight: bold;
+    padding:.5rem;    
+}
+
+header .menu-principal a:hover,
+header .menu-principal a.atual
+{
+    color:var(--cor-marrom);
+    border-bottom:.7rem solid var(--cor-marrom);    
+}
+
+header .banner-mocaatrevida{
+    display:grid;
+    grid-template-columns: 0.6fr 1fr;
+    grid-template-rows: 150px 1fr;
+    grid-template-areas: "imagem titulo"
+                          "imagem texto";       
+}
+
+header .banner-titulo{
+    grid-area:titulo;
+    font-size:7rem;
+    text-transform: uppercase;
+    color: #FFF;
+    text-align:center;
+    text-shadow: 0px 4px 4px rgba(0,0,0,.25);
+    align-self:center;
+}
+
+header .banner-titulo > img{
+    vertical-align: middle;
+    margin-right:1rem;
+}
+
+header .banner-imagem{
+    grid-area:imagem;
+    align-self:end;    
+}
+
+header .banner-texto{
+    grid-area:texto;
+    text-align:center;   
+}
+
+header .banner-texto > p{
+    font-size:2.2rem;
+    line-height: 120%;
+    margin:0 1rem 3rem; 
+}
+
+.btn{
+    background-color:var(--cor-marrom);
+    padding:2rem 3rem;
+    color:#FFF;
+    text-decoration: none;
+    border-radius:2rem;
+    box-shadow:0 4px 1px var(--cor-marrom-escura);
+    cursor:pointer;    
+}
+
+.btn:hover{
+    background-color:var(--cor-marrom-escura);
+    box-shadow:0 4px 1px #99524A;    
+}
+
+.btn-cinza{
+    background-color: var(--cor-cinza);
+    box-shadow:0 4px 1px var(--cor-cinza-escura);    
+}
+
+.banner-btn{
+    font-size:2.5rem;
+    text-transform: uppercase;
+}
+
+.procedimentos{
+    background-color:var(--cor-marrom);
+    border-top: 1.5rem solid var(--cor-marrom-escura);
+    min-height:425px;
+}
+
+.section-titulo{
+    background-color:var(--cor-verde);
+    color:var(--cor-fonte);
+    display:inline-block;
+    padding:1rem 5rem;
+    margin-top:2rem;
+    text-transform:uppercase;
+    transform:skewX(-15deg);
+    text-align:center;
+}
+
+.section-titulo span{
+    transform:skewX(15deg);
+    display:inline-block;   
+}
+
+.container-conteudo{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;    
+}
+
+.procedimentos-categoria{
+    width:20%;
+    text-align:center;
+    margin:5rem 0;   
+}
+
+.procedimentos-categoria a{
+    font-size:2.5rem;
+    color:#FFF;
+    text-decoration: none;
+    text-shadow:0 4px 4px rgba(0,0,0,.25);
+}
+
+.procedimentos-categoria a:hover{
+    font-size:3rem;
+}
+
+.procedimentos-categoria a:hover img{
+    transform:scale(110%);
+}
+
+.empresa{
+    background-color:var(--cor-cinza);
+    border-top:1.5rem solid var(--cor-cinza-escura);
+    padding-bottom:2rem;
+}
+
+.empresa-conteudo{
+    width:33.3%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    padding:1rem;
+    border-left:1px solid #FFF;
+    border-right:1px solid var(--cor-marrom);
+    margin-top:2rem;
+}
+
+.empresa-conteudo:first-child{
+    border-left:none;    
+}
+
+.empresa-conteudo:last-child{
+    border-right:none;    
+}
+
+.empresa-conteudo img,
+.empresa-conteudo p
+{
+    margin:2rem;
+}
+
+.empresa-conteudo .btns-marcas{
+    width:100%;
+    text-align: center;
+}
+
+.empresa-conteudo .btn-marcas{
+    display:inline-block;
+    background-repeat:no-repeat;
+    background-size:cover;
+    text-indent:-1000000px;
+}
+
+.empresa-conteudo .btn-avon{
+    background-image:url("../imagens/image-removebg-preview\ \(4\)\ 1.png");
+    width:110px;
+    height:111px;
+}
+
+.empresa-conteudo .btn-natura{
+    background-image:url("../imagens/natura-min-removebg-preview\ 1.png");
+    width:140px;
+    height:111px;
+}
+
+.empresa-conteudo .marcas-desconto{
+    background:var(--cor-verde) url("../imagens/desconto\ 1.png") no-repeat 10px center;
+    padding:3rem;
+    padding-left:7rem;
+    text-align:center;
+    border-radius:2rem;
+    font-size:2rem;
+    font-weight:bold;
+    color:var(--cor-fonte);
+}
+
+.localizacao{
+    background: var(--cor-azul) url("../imagens/shimmering-gold-stars-background_53876-96092-removebg-preview\ 1.png") no-repeat;
+    background-size:cover;
+}
+
+.localizacao .mapa iframe{
+    border:.5rem solid var(--cor-verde);
+    margin-top:3rem;
+    border-radius:2rem;
+    width:100%;
+}
+
+.container-localizacao{
+    display:flex;
+    justify-content:space-between;
+    padding-bottom:2rem;
+}
+
+.localizacao .localizacao-mapa{
+    width:55%;
+}
+
+.localizacao .localizacao-conteudo{
+    width:35%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;   
+}
+
+.localizacao .localizacao-conteudo img{
+    width:60%;
+}
+
+.localizacao .localizacao-reserva{
+    background: var(--cor-verde) url("../imagens/reserved\ 1.png") no-repeat 2rem center;
+    padding:1.5rem;
+    padding-left:10rem;
+    border-radius:2rem;
+    font-weight: bold;
+    margin-bottom:1rem;    
+}
+
+.localizacao .localizacao-endereco{
+    color:#FFF;
+    margin-top:2rem;  
+}
+
+.localizacao .localizacao-endereco .endereco{
+    display:inline-block;
+    padding:1rem;
+    padding-left:5rem;
+    background:url("../imagens/pin-map\ 1.png") no-repeat left center;
+    background-size:35px;
+}
+
+.localizacao .localizacao-endereco .telefone{
+    display:inline-block;
+    padding:1rem;
+    padding-left:5rem;
+    background:url("../imagens/call\ 1.png") no-repeat left center;
+    background-size:35px;
+}
+
+footer{
+    background-color:var(--cor-verde);
+    border:1.5rem solid var(--cor-verde-escura);
+}
+
+.container-footer{
+    min-height:300px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.footer-logo{
+    background:url("../imagens/csm_cabeleireira-leila-1_1587140ad6-removebg-preview\ 1.png");
+    width:347px;
+    height:107px;
+    text-indent: -1000000px;
+}
+
+.footer .funcionamento{
+    margin-bottom:3rem;
+    font-weight: bold;
+}
+
+footer .funcionamento h3{
+    color:var(--cor-fonte);
+    text-transform:uppercase;
+    margin-bottom:.5rem;
+}
+
+footer .sociais{
+    display:flex;
+    justify-content: space-between;
+}
+
+footer .btn-social{
+    width:50px;
+    height:50px;
+    text-indent: -1000000px;
+    display: inline-block;
+    background:url("../imagens/instagram\ 1.png") no-repeat;
+}
+
+footer .btn-instagram{
+    background-position:-78px 0;
+}
+
+.conteudo-paginas{
+    border-top:1.5rem solid var(--cor-cinza-escura);
+    min-height:300px;
+}
+
+.conteudo-paginas form{
+    padding:2rem;
+    max-width:60px;
+    margin:2rem auto;
+}
+
+.campo-formulario{
+    margin:1.5rem 0;
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea{
+    width:100%;
+    padding:1rem;
+}
+
+.campo-formulario input[type=radio]{
+    width:initial;
+    margin:0 1rem 0 5rem;
+}
+
+.campo-formulario input[type=checkbox]{
+    width:initial;
+    margin:1rem;
+}
+
+.campo-formulario fieldset{
+    padding:2rem;    
+}
